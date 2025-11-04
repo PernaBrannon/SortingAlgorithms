@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sorting Algorithms - Java & Web Visualization</title>
+    <meta name="description" content="Sorting Algorithms implementation in Java with interactive web visualization">
+    <meta name="keywords" content="sorting algorithms, java, visualization, computer science, programming">
+    <meta name="author" content="PernaBrannon">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+        }
+        
+        .container {
+            text-align: center;
+            max-width: 800px;
+            padding: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+        
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+            opacity: 0.9;
+        }
+        
+        .buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 40px;
+        }
+        
+        .btn {
+            padding: 15px 30px;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            min-width: 200px;
+        }
+        
+        .btn-primary {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+        
+        .btn-primary:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+        }
+        
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 40px;
+        }
+        
+        .feature {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+        
+        .feature h3 {
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+        
+        .feature p {
+            opacity: 0.9;
+            line-height: 1.6;
+        }
+        
+        .algorithms {
+            margin-top: 30px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+        
+        .algorithms h3 {
+            margin-bottom: 15px;
+        }
+        
+        .algorithm-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+        }
+        
+        .algorithm-tag {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            border: 1px solid rgba(255,255,255,0.3);
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                margin: 20px;
+                padding: 30px 20px;
+            }
+            
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            .buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🔢 Sorting Algorithms</h1>
+        <p class="subtitle">Java Implementation with Interactive Web Visualization</p>
+        
+        <div class="buttons">
+            <a href="web-visualization/" class="btn btn-primary">
+                🎮 Launch Interactive Visualizer
+            </a>
+            <a href="https://github.com/PernaBrannon/SortingAlgorithms" class="btn btn-primary" target="_blank">
+                📱 View Source Code
+            </a>
+        </div>
+        
+        <div class="features">
+            <div class="feature">
+                <h3>🎯 Java Implementation</h3>
+                <p>Complete sorting algorithms implemented in Java with comprehensive testing and clean, readable code structure.</p>
+            </div>
+            
+            <div class="feature">
+                <h3>🎨 Interactive Visualization</h3>
+                <p>Real-time animated visualization showing how each sorting algorithm works step-by-step with customizable speed and array size.</p>
+            </div>
+            
+            <div class="feature">
+                <h3>📊 Performance Analysis</h3>
+                <p>Built-in complexity analysis showing time and space complexity for each algorithm with color-coded performance indicators.</p>
+            </div>
+        </div>
+        
+        <div class="algorithms">
+            <h3>Implemented Algorithms</h3>
+            <div class="algorithm-list">
+                <span class="algorithm-tag">Bubble Sort</span>
+                <span class="algorithm-tag">Insertion Sort</span>
+                <span class="algorithm-tag">Selection Sort</span>
+                <span class="algorithm-tag">Shell Sort</span>
+                <span class="algorithm-tag">Merge Sort</span>
+                <span class="algorithm-tag">Quick Sort</span>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sorting Algorithms Visualizer</title>
+    <meta name="description" content="Interactive visualization of sorting algorithms including Bubble Sort, Insertion Sort, Selection Sort, Shell Sort, Merge Sort, and Quick Sort">
+    <meta name="keywords" content="sorting algorithms, visualization, computer science, algorithms, programming">
+    <meta name="author" content="PernaBrannon">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAzMiAzMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjMyIiBoZWlnaHQ9IjMyIiBmaWxsPSIjNjY3ZWVhIi8+CjxyZWN0IHg9IjQiIHk9IjI0IiB3aWR0aD0iNCIgaGVpZ2h0PSI0IiBmaWxsPSJ3aGl0ZSIvPgo8cmVjdCB4PSIxMCIgeT0iMjAiIHdpZHRoPSI0IiBoZWlnaHQ9IjgiIGZpbGw9IndoaXRlIi8+CjxyZWN0IHg9IjE2IiB5PSIxNiIgd2lkdGg9IjQiIGhlaWdodD0iMTIiIGZpbGw9IndoaXRlIi8+CjxyZWN0IHg9IjIyIiB5PSIxMiIgd2lkdGg9IjQiIGhlaWdodD0iMTYiIGZpbGw9IndoaXRlIi8+Cjwvc3ZnPgo=">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/styles.css">
+    
+    <!-- Open Graph Meta Tags for social sharing -->
+    <meta property="og:title" content="Sorting Algorithms Visualizer">
+    <meta property="og:description" content="Interactive visualization of popular sorting algorithms">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://pernabrannon.github.io/SortingAlgorithms/">
+    <meta property="og:image" content="https://pernabrannon.github.io/SortingAlgorithms/preview.png">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <h1>🔢 Sorting Algorithms Visualizer</h1>
+            <p>Interactive visualization of popular sorting algorithms converted from Java implementation</p>
+        </header>
+
+        <!-- Control Panel -->
+        <section class="control-panel">
+            <div class="controls-grid">
+                <!-- Algorithm Selection -->
+                <div class="control-group">
+                    <label for="algorithmSelect">Algorithm</label>
+                    <select id="algorithmSelect">
+                        <option value="bubble">Bubble Sort</option>
+                        <option value="insertion">Insertion Sort</option>
+                        <option value="selection">Selection Sort</option>
+                        <option value="shell">Shell Sort</option>
+                        <option value="merge">Merge Sort</option>
+                        <option value="quick">Quick Sort</option>
+                    </select>
+                </div>
+
+                <!-- Array Size Control -->
+                <div class="control-group">
+                    <label for="arraySizeSlider">Array Size: <span id="arraySizeDisplay" class="range-display">50</span></label>
+                    <input type="range" id="arraySizeSlider" min="10" max="100" value="50" step="5">
+                </div>
+
+                <!-- Speed Control -->
+                <div class="control-group">
+                    <label for="speedSlider">Speed: <span id="speedDisplay" class="range-display">Normal</span></label>
+                    <input type="range" id="speedSlider" min="1" max="5" value="3" step="1">
+                </div>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="button-group">
+                <button id="generateBtn" class="btn btn-secondary">Generate New Array</button>
+                <button id="sortBtn" class="btn btn-primary">Start Sorting</button>
+                <button id="stopBtn" class="btn btn-danger" disabled>Stop</button>
+            </div>
+        </section>
+
+        <!-- Visualization Area -->
+        <section class="visualization-area">
+            <div class="canvas-container">
+                <canvas id="sortingCanvas"></canvas>
+            </div>
+        </section>
+
+        <!-- Status Panel -->
+        <section class="status-panel">
+            <div class="status-grid">
+                <div>
+                    <span class="status-text" id="statusDisplay">Ready to sort! Select an algorithm and click "Start Sorting"</span>
+                </div>
+                <div class="time-display" id="timeDisplay">0.00s</div>
+            </div>
+        </section>
+
+        <!-- Algorithm Information -->
+        <section class="algorithm-info">
+            <h3>Algorithm Complexity</h3>
+            <div class="complexity-info" id="complexityInfo">
+                <div class="complexity-item">
+                    <div class="label">Best Case</div>
+                    <div class="value" id="bestCase">O(n²)</div>
+                </div>
+                <div class="complexity-item">
+                    <div class="label">Average Case</div>
+                    <div class="value" id="averageCase">O(n²)</div>
+                </div>
+                <div class="complexity-item">
+                    <div class="label">Worst Case</div>
+                    <div class="value" id="worstCase">O(n²)</div>
+                </div>
+                <div class="complexity-item">
+                    <div class="label">Space Complexity</div>
+                    <div class="value" id="spaceComplexity">O(1)</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer style="text-align: center; margin-top: 40px; padding: 20px; color: rgba(255,255,255,0.7);">
+            <p>🚀 Built with HTML5 Canvas, JavaScript, and CSS • Converted from Java implementation</p>
+            <p>
+                <a href="https://github.com/PernaBrannon/SortingAlgorithms" 
+                   style="color: rgba(255,255,255,0.8); text-decoration: none;" 
+                   target="_blank" 
+                   rel="noopener noreferrer">
+                    📱 View Source Code on GitHub
+                </a>
+            </p>
+        </footer>
+    </div>
+
+    <!-- JavaScript Files -->
+    <script src="js/sorting-algorithms.js"></script>
+    <script src="js/visualizer.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/complexity-info.js"></script>
+</body>
+</html>
